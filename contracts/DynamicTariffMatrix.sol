@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 contract DynamicTariffMatrix {
     address public admin;
+
     struct TariffCell {
         uint256 quota;
         uint256 used;
@@ -11,7 +12,7 @@ contract DynamicTariffMatrix {
         bool exists;
     }
     /*
-exporter =&gt; importer =&gt; hsCode =&gt; TariffCell
+exporter => importer => hsCode => TariffCell
 */
     mapping(string => mapping(string => mapping(string => TariffCell)))
         public matrix;

@@ -10,6 +10,7 @@
 
 pragma solidity ^0.8.20;
 
+//NOTE - I do not think this is needed for disertation, this will fetch additional data by oracles, in RL probably needed, but here it is questionable
 contract CustomsOracle {
     address public oracleAuthority;
     modifier onlyOracle() {

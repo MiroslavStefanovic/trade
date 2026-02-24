@@ -76,6 +76,8 @@ ANNEX 3 – Country Specific Quotas
         q.used += amount;
     }
 
+    //TODO return bool, probably better to return uint256 with amount
+    //NOTE amount decimals to be mentioned in documentation, e.g. 1000 = 10.00 tons
     function quotaAvailable(
         string memory country,
         string memory hsCode,

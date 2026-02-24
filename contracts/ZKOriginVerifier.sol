@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+//NOTE - probably not needed for disertation
+
 interface IVerifier {
     function verifyProof(
         uint256[2] calldata a,
