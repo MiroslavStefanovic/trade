@@ -57,7 +57,8 @@ contract CeftaTrade is ITradeDefinitions {
             details.importer,
             details.hsCode,
             details.quantity,
-            details.value
+            details.value,
+            details.hashProofOfOrigin
         );
 
         return tradeId;
@@ -95,7 +96,8 @@ contract CeftaTrade is ITradeDefinitions {
             pending.details.importer.account,
             pending.details.hsCode,
             pending.details.quantity,
-            pending.details.value
+            pending.details.value,
+            pending.details.hashProofOfOrigin
         );
 
         return address(trade);

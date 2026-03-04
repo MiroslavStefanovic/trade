@@ -308,6 +308,7 @@ describe("Cefta trade", function () {
       hsCode: "1001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-1")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -346,6 +347,7 @@ describe("Cefta trade", function () {
         hsCode: "9999",
         quantity: 10,
         value: 1000,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-2")),
         exporter: {
           account: alice.address,
           country: 499,
@@ -387,6 +389,7 @@ describe("Cefta trade", function () {
       hsCode: "2001",
       quantity: 6,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-3")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -433,6 +436,7 @@ describe("Cefta trade", function () {
       hsCode: "3001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-4")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -478,6 +482,7 @@ describe("Cefta trade", function () {
         hsCode: "1001",
         quantity: 10,
         value: 1000,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-5")),
         exporter: {
           account: alice.address,
           country: 840,
@@ -494,6 +499,7 @@ describe("Cefta trade", function () {
         hsCode: "1001",
         quantity: 10,
         value: 1000,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-6")),
         exporter: {
           account: alice.address,
           country: 499,
@@ -510,6 +516,7 @@ describe("Cefta trade", function () {
         hsCode: "1001",
         quantity: 10,
         value: 1000,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-7")),
         exporter: {
           account: alice.address,
           country: 499,
@@ -542,6 +549,7 @@ describe("Cefta trade", function () {
         hsCode: "1001",
         quantity: 0,
         value: 1000,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-8")),
         exporter: {
           account: alice.address,
           country: 499,
@@ -558,6 +566,7 @@ describe("Cefta trade", function () {
         hsCode: "1001",
         quantity: 10,
         value: 0,
+        hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-9")),
         exporter: {
           account: alice.address,
           country: 499,
@@ -599,6 +608,7 @@ describe("Cefta trade", function () {
       hsCode: "1001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-10")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -624,6 +634,9 @@ describe("Cefta trade", function () {
     expect(await trade.quantity()).to.equal(8n);
     expect(await trade.value()).to.equal(900n);
     expect(await trade.active()).to.equal(true);
+    expect(await trade.hashProofOfOrigin()).to.equal(
+      ethers.keccak256(ethers.toUtf8Bytes("proof-10")),
+    );
     expect(await agreement.quotaAvailable(499, 688, "1001")).to.equal(92n);
   });
 
@@ -656,6 +669,7 @@ describe("Cefta trade", function () {
       hsCode: "1001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-11")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -715,6 +729,7 @@ describe("Cefta trade", function () {
       hsCode: "1001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-12")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -769,6 +784,7 @@ describe("Cefta trade", function () {
       hsCode: "1001",
       quantity: 10,
       value: 1000,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-13")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -857,6 +873,7 @@ describe("E2E trade flow", function () {
       hsCode: "1001",
       quantity: 5,
       value: 500,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-14")),
       exporter: {
         account: alice.address,
         country: 499,
@@ -912,6 +929,7 @@ describe("E2E trade flow", function () {
       hsCode: "1001",
       quantity: 5,
       value: 500,
+      hashProofOfOrigin: ethers.keccak256(ethers.toUtf8Bytes("proof-15")),
       exporter: {
         account: alice.address,
         country: 499,

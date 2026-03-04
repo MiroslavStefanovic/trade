@@ -14,6 +14,7 @@ interface ITradeDefinitions {
         string hsCode;
         uint256 quantity;
         uint256 value;
+        bytes32 hashProofOfOrigin;
         Party exporter;
         Party importer;
     }
@@ -25,7 +26,8 @@ interface ITradeDefinitions {
         address indexed importerAccount,
         string hsCode,
         uint256 quantity,
-        uint256 value
+        uint256 value,
+        bytes32 hashProofOfOrigin
     );
     event TradeSubmitted(
         uint256 indexed tradeId,
@@ -33,6 +35,7 @@ interface ITradeDefinitions {
         Party importer,
         string hsCode,
         uint256 quantity,
-        uint256 value
+        uint256 value,
+        bytes32 hashProofOfOrigin
     );
 }

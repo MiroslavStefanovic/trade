@@ -15,6 +15,8 @@ contract CeftaTradeContract is ITradeDefinitions {
 
     uint256 public value;
 
+    bytes32 public hashProofOfOrigin;
+
     bool public active;
 
     uint16 public exporterCountry;
@@ -41,6 +43,7 @@ contract CeftaTradeContract is ITradeDefinitions {
         hsCode = details.hsCode;
         quantity = details.quantity;
         value = details.value;
+        hashProofOfOrigin = details.hashProofOfOrigin;
         exporterAccount = details.exporter.account;
         exporterCountry = details.exporter.country;
         importerAccount = details.importer.account;
